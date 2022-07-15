@@ -3,6 +3,11 @@
 :root {
   --color-white: #fff;
   --color-gray: #383c42;
+  --color-letter-gray: #312e42;
+  --color-svg-eye: #777;
+  --color-svg-google: #e34133;
+  --color-svg-linkedin: #0a66c2;
+  --color-svg-facebook: #14a0f9;
 }
 * {
   margin: 0;
@@ -10,6 +15,7 @@
   box-sizing: 0;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
+  color: var(--color-white);
 }
 
 header {
@@ -34,13 +40,251 @@ main {
 }
 
 main form {
+  margin-top: 3%;
+  width: 35%;
+  height: 70vh;
+  background-color: var(--color-gray);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4) inset 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs-container {
   margin-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputs-container input {
+  width: 90%;
+  height: 45px;
+  padding: 8px 15px;
+  border: 0;
+  outline: 0;
+  border-radius: 12px;
+  font-size: 16px;
+  color: var(--color-letter-gray);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.inputs-container input:focus {
+  box-shadow: inset 1px 4px 7px rgba(0, 0, 0, 0.5);
+}
+
+.password-container {
+  margin-top: 5%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password-container i {
+  position: absolute;
+  right: 5%;
+  top: 35%;
+  color: var(--color-svg-eye);
+  cursor: pointer;
+}
+
+#eye {
+  display: none;
+}
+
+.password-infos {
+  width: 90%;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.password-infos a {
+  transition: 0.2s ease-in-out;
+}
+
+.password-infos a:hover {
+  color: #18acfe;
+}
+
+main form button {
+  background-color: #18acfe;
+  width: 90%;
+  height: 50px;
+  border: 0;
+  outline: 0;
+  border-radius: 12px;
+  margin-top: 10%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+main form button:hover {
+  background: var(--color-white);
+  color: #18acfe;
+}
+
+.links-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.links-container span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.links-container aside {
+  margin-top: 5%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.links-container aside i {
+  font-size: 1.6rem;
+  background-color: var(--color-white);
+  padding: 8px;
+  height: 25px;
+  width: 25px;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links-container aside .google {
+  color: var(--color-svg-google);
+}
+
+.links-container aside .google:hover {
+  background-color: var(--color-svg-google);
+  color: var(--color-white);
+}
+
+.links-container aside .linkedin {
+  color: var(--color-svg-linkedin);
+}
+
+.links-container aside .linkedin:hover {
+  background-color: var(--color-svg-linkedin);
+  color: var(--color-white);
+}
+
+.links-container aside .facebook {
+  color: var(--color-svg-facebook);
+}
+
+.links-container aside .facebook:hover {
+  background-color: var(--color-svg-facebook);
+  color: var(--color-white);
+}
+
+footer {
+  width: 100%;
+  margin-top: 10%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer hr {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-white);
+}
+
+footer span {
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-top: 5%;
+}
+
+footer a {
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+footer a:hover {
+  color: #18acfe;
 }
 
 /*Medias*/
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 499px) {
+  header h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  main form {
+    width: 60%;
+    height: 100%;
+  }
+  .password-infos {
+    width: 90%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .password-infos a {
+    margin-top: 2%;
+    text-align: center;
+  }
+  .links-container aside a {
+    padding: 0 10px 10px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 640px) {
   header h1 {
     font-size: 2rem;
+    margin: 0 10px;
+    text-align: center;
+  }
+  main form {
+    width: 40%;
+    padding: 15px;
+    height: 75vh;
+  }
+  .password-infos {
+    width: 90%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .password-infos a {
+    margin-top: 2%;
+    text-align: center;
+  }
+  .links-container aside a {
+    padding: 0 10px 10px;
+  }
+}
+
+@media screen and (min-width: 642px) and (max-width: 1360px) {
+  main form {
+    height: 80vh;
+  }
+}
+
+@media screen and (min-width: 1361px) {
+  main form {
+    height: 90vh;
   }
 }
